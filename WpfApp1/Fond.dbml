@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="FondPIO" Class="FondDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-GOGF2RU;Initial Catalog=FondPIO;Integrated Security=True" SettingsObjectName="WpfApp1.Properties.Settings" SettingsPropertyName="FondPIOConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Firma" Member="Firmas">
+    <Type Name="Firma">
+      <Column Name="PIB" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Naziv" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Adresa" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Grad" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Delatnost" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Firma_Uplate" Member="Uplates" ThisKey="PIB" OtherKey="PIB" Type="Uplate" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Osiguranik" Member="Osiguraniks">
+    <Type Name="Osiguranik">
+      <Column Name="SifOsiguranika" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Ime" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Prezime" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Godiste" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Osiguranik_Uplate" Member="Uplates" ThisKey="SifOsiguranika" OtherKey="SifOsiguranika" Type="Uplate" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Uplate" Member="Uplates">
+    <Type Name="Uplate">
+      <Column Name="SifOsiguranika" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PIB" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Godina" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Mesec" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Uplaceno" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Firma_Uplate" Member="Firma" ThisKey="PIB" OtherKey="PIB" Type="Firma" IsForeignKey="true" />
+      <Association Name="Osiguranik_Uplate" Member="Osiguranik" ThisKey="SifOsiguranika" OtherKey="SifOsiguranika" Type="Osiguranik" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

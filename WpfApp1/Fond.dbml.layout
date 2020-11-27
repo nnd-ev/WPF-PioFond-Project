@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Fond">
+  <DataContextMoniker Name="/FondDataContext" />
+  <nestedChildShapes>
+    <classShape Id="8afb48ec-bff4-4aa3-9f34-b2a712ef9970" absoluteBounds="0.75, 3.875, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/FondDataContext/Firma" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7f5e86ad-bfe5-415d-9bb6-e3ec0e92f685" absoluteBounds="0.765, 4.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a93d8db1-1e1e-42a9-bd11-656c591030a6" absoluteBounds="0.75, 1, 2, 1.5785953776041664">
+      <DataClassMoniker Name="/FondDataContext/Osiguranik" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7db571f1-0056-44db-b491-b92aebbb90bd" absoluteBounds="0.765, 1.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ec1fffdf-24d3-47b1-924c-5b29bb7a1cca" absoluteBounds="3.5, 0.875, 2, 1.7708968098958329">
+      <DataClassMoniker Name="/FondDataContext/Uplate" />
+      <nestedChildShapes>
+        <elementListCompartment Id="03ecef0a-caf8-4e77-aa05-8e861d5a7478" absoluteBounds="3.515, 1.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 4.76044840494792); (4.5 : 4.76044840494792); (4.5 : 2.64589680989583)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/FondDataContext/Firma/Firma_Uplate" />
+      <nodes>
+        <classShapeMoniker Id="8afb48ec-bff4-4aa3-9f34-b2a712ef9970" />
+        <classShapeMoniker Id="ec1fffdf-24d3-47b1-924c-5b29bb7a1cca" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 1.78929768880208); (3.5 : 1.78929768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/FondDataContext/Osiguranik/Osiguranik_Uplate" />
+      <nodes>
+        <classShapeMoniker Id="a93d8db1-1e1e-42a9-bd11-656c591030a6" />
+        <classShapeMoniker Id="ec1fffdf-24d3-47b1-924c-5b29bb7a1cca" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
